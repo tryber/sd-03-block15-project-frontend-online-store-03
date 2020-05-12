@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class Busca extends Component {
   
   constructor(props) {
-    super(props):
+    super(props);
     
     this.setState({ item: value.target.valu})
   }
