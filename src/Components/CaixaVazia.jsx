@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { RiDropboxLine } from 'react-icons/ri';
 
 function CaixaVazia() {
   return (
-    <>
+    <div>
       <div className="caixa">
         <RiDropboxLine size="500" />
       </div>
@@ -11,7 +11,7 @@ function CaixaVazia() {
       <div>
         <h1>Seu carrinho está vazio!</h1>
       </div>
-    </>
+    </div>
   );
 }
 
