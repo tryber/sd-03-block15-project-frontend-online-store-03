@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { RiDropboxLine } from 'react-icons/ri';
 
 function CaixaVazia() {

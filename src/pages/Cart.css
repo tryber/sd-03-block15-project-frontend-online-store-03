@@ -1,16 +1,16 @@
 .carrinhoText {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
-  margin-top: 30px;
-  align-items: center;
 }
 
 .caixaVazia {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
 }

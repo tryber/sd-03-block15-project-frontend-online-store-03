@@ -4,20 +4,15 @@ import HeaderCarrinho from '../Components/HeaderCarrinho';
 import './Cart.css';
 
 class Cart extends Component {
-
-  state = {
-
-  }
-
-  render(){
-    return(
+  render() {
+    return (
       <div className="container">
-        <HeaderCarrinho/>
+        <HeaderCarrinho />
         <div className="caixaVazia">
-          <CaixaVazia/>
+          <CaixaVazia />
         </div>
       </div>
-    )
+    );
   }
 }
 
