@@ -8,7 +8,7 @@ class App extends React.Component {
     const result = api.getCategories();
     result.then((response) => console.log(response));
 
-    const secondResult = api.getProductsFromCategoryAndQuery('MLB271599','Agro');
+    const secondResult = api.getProductsFromCategoryAndQuery('MLB271599', 'Agro');
     secondResult.then((response) => console.log(response));
   }
 
