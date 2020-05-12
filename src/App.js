@@ -1,6 +1,7 @@
 import React from 'react';
 import * as api from './services/api';
 import './App.css';
+import Cart from './pages/cart';
 
 class App extends React.Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>Hello world!</h1>
+      <Cart />
     );
   }
 }
