@@ -1,11 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class Busca extends Component {
-  
   constructor(props) {
     super(props);
-    
-    this.setState({ item: value.target.valu})
+
+    this.state = { item: '' };
+    this.textChange = this.textChange.bind(this);
+  }
+
+  textChange(value) {
+    this.setState({ item: value.target.value });
   }
 
   textInput() {
@@ -26,8 +30,8 @@ export class Busca extends Component {
         <input type="text" onChange={this.textChange} />
         {this.textInput()}
       </div>
-    )
+    );
   }
 }
 
-export default Busca
+export default Busca;
