@@ -1,15 +1,27 @@
 import React from 'react';
 import './App.css';
 import { FiLogIn } from 'react-icons/fi';
+import * as api from './services/api';
 
-function App() {
-  return (
-    <div>
+class App extends React.Component {
+
+  state = {
+    
+  }
+
+  componentDidMount() {
+    const result = api.getCategories();
+    result.then((response) => console.log(response));
+
+    const secondResult = api.getProductsFromCategoryAndQuery('MLB271599', 'Agro');
+    secondResult.then((response) => console.log(response));
+  }
+
+  render() {
+    return (
       <h1>Hello world!</h1>
-      <h2>App.js</h2>
-      <FiLogIn />
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
