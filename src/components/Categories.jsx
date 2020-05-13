@@ -1,6 +1,6 @@
 import React from 'react';
 import * as api from '../services/api';
-import RadioCategory from '../components/radioCategory';
+import RadioCategory from './RadioCategory';
 
 class Categories extends React.Component {
   constructor(props) {
