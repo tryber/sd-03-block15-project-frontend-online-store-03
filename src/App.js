@@ -1,6 +1,6 @@
-import React from "react";
-import Categories from "./pages/categories";
-import "./App.css";
+import React from 'react';
+import Categories from './pages/categories';
+import './App.css';
 
 class App extends React.Component {
   render() {
