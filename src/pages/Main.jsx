@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as pages from './Index';
+import Produtos from '../components/Produtos';
 
 
 class Main extends Component {
@@ -23,6 +24,8 @@ class Main extends Component {
         <div className="carrinho">
           <pages.ButtonCart />
         </div>
+
+        <Produtos />
 
         {
           this.state.temProduto === true
