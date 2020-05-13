@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Categories from '../components/categories';
 import ButtonCart from '../components/buttonCart';
-import BoxEmpty from '../components/buttonCart';
-import SearchBar from '../components/buttonCart';
+import BoxEmpty from '../components/boxEmpty';
+import SearchBar from '../components/SearchBar';
 
 class Main extends Component {
 
