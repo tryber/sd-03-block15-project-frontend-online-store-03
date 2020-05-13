@@ -1,16 +1,18 @@
-import React from 'react';
-import Categories from './pages/categories';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import * as pages from './pages/Index';
 import './App.css';
-import SearchBar from './components/SearchBar';
 
-
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hello world!</h1>
-        <SearchBar />
-        <Categories />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={pages.Main} />
+            <Route exact path="/cart" component={pages.Cart} />
+          </Switch>
+        </Router>
       </div>
     );
   }
