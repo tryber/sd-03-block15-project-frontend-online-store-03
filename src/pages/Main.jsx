@@ -3,10 +3,12 @@ import * as pages from './Index';
 
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { temProduto: false };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   state = {
+  //     teste: 'teste';
+  //    };
+  // }
 
   render() {
     return (
@@ -24,6 +26,8 @@ class Main extends Component {
           <pages.ButtonCart />
         </div>
 
+        <pages.SearchedItens />
+        {/*
         {
           this.state.temProduto === true
             ? <h1>Aqui vai o card 5</h1>
@@ -32,7 +36,7 @@ class Main extends Component {
                 <h1>Nenhum produto encontrado</h1>
               </div>
             )
-        }
+        } */}
 
       </div>
     );
