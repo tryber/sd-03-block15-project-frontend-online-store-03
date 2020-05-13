@@ -1,16 +1,20 @@
-import React from "react";
-import Categories from "./pages/categories";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import * as pages from './pages/index'
+import './App.css';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello world!</h1>
-        <Categories />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={pages.Main} />
+          </Switch>
+        </Router>
       </div>
     );
   }
-}
+} 
 
 export default App;

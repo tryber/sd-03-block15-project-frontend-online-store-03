@@ -23,7 +23,7 @@ class Categories extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <legend>Categorias</legend>
         {this.state.categories.map((element) => (
           <RadioCategory
