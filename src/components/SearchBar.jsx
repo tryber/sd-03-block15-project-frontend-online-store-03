@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class Busca extends Component {
+export class SearchBar extends Component {
   constructor(props) {
     super(props);
 
@@ -34,4 +34,4 @@ export class Busca extends Component {
   }
 }
 
-export default Busca;
+export default SearchBar;
