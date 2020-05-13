@@ -1,2 +1,2 @@
-export { default as Main } from './main';
-export { Cart } from './cart';
+export { default as Main } from './Main';
+export { default as Cart } from './Cart';

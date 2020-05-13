@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import Categories from '../components/categories';
-import ButtonCart from '../components/buttonCart';
+import Categories from '../components/Categories';
+import ButtonCart from '../components/ButtonCart';
 import SearchBar from '../components/SearchBar';
 
 class Main extends Component {
-
-  state = {
-    temProduto: false,
+  constructor(props) {
+    super(props);
+    this.state = { temProduto: false };
   }
 
-  render(){
-
-    return(
+  render() {
+    return (
       <div className="container">
 
         <div className="src-bar">
@@ -27,16 +26,17 @@ class Main extends Component {
         </div>
 
         {
-          this.state.temProduto === true ?
-            <h1>Aqui vai o card 5</h1>
-            :
-            <div>
-              <h1>Você não selecionou nenhum produto!</h1>
-            </div>
+          this.state.temProduto === true
+            ? <h1>Aqui vai o card 5</h1>
+            : (
+              <div>
+                <h1>Você não selecionou nenhum produto!</h1>
+              </div>
+            )
         }
 
       </div>
-    )
+    );
   }
 }
 
