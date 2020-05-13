@@ -26,8 +26,8 @@ export class SearchBar extends Component {
     return (
       <div>
         <form>
-          <input type="text" onChange={this.textChange} />
-          <button type="submit" onClick={this.searchAPI} className="btn btn-outline-primary" >
+          <input data-testeid="query-input" type="text" onChange={this.textChange} />
+          <button data-testeid="query-button" type="submit" onClick={this.searchAPI} className="btn btn-outline-primary" >
             <GoSearch />
           </button>
         </form>
