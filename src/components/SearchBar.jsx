@@ -7,6 +7,7 @@ export class SearchBar extends Component {
     super(props);
     this.state = {
       item: "",
+      searchResults: [],
     };
     this.textChange = this.textChange.bind(this);
     this.searchAPI = this.searchAPI.bind(this);
@@ -18,10 +19,12 @@ export class SearchBar extends Component {
 
   searchAPI(e) {
     e.preventDefault();
-    const buscar = apifunc.getProductsByTerm(this.state.item)
-    buscar.then(resposta => console.log(resposta));
+    const search = apifunc.getProductsByTerm(this.state.item)
+    search.then(answear => this.setState(() => ({
+      searchResults: answear.results,
+    })));
   }
-
+    /* title, image, price, key */
   render() {
     return (
       <div>

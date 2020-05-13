@@ -29,7 +29,7 @@ class Main extends Component {
             ? <h1>Aqui vai o card 5</h1>
             : (
               <div>
-                <h1>Você não selecionou nenhum produto!</h1>
+                <h1>Nenhum produto encontrado</h1>
               </div>
             )
         }
