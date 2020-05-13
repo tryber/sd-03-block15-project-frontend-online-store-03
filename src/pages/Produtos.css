@@ -1,0 +1,20 @@
+.card {
+  max-width: 305px;
+}
+
+.title {
+  text-align: center;
+}
+
+.preco {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}

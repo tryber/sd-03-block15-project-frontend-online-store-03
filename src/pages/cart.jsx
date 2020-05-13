@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
-import CaixaVazia from '../Components/CaixaVazia';
-import HeaderCarrinho from '../Components/HeaderCarrinho';
-import './Cart.css';
+import BoxEmpty from '../components/boxEmpty';
+import HeaderCart from '../components/HeaderCart';
 
-class Cart extends Component {
-  render() {
-    return (
+export class Cart extends Component {
+
+  state = {
+    temProduto: false,
+  }
+
+  render(){
+
+    return(
       <div className="container">
-        <HeaderCarrinho />
-        <div className="caixaVazia">
-          <CaixaVazia />
-        </div>
+        <HeaderCart/>
+        {
+        this.state.temProduto ?
+          <h1>Aqui tem que ter o carrinho!</h1>
+          :
+          <BoxEmpty />
+        }
       </div>
-    );
+    )
   }
 }
-
-export default Cart;

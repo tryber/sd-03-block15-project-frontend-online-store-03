@@ -1,20 +1,21 @@
 import React from 'react';
-import * as api from './services/api';
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import * as pages from './pages/index';
 import './App.css';
-import Cart from './pages/cart';
+
 
 class App extends React.Component {
-  componentDidMount() {
-    const result = api.getCategories();
-    result.then((response) => console.log(response));
-
-    const secondResult = api.getProductsFromCategoryAndQuery('MLB271599', 'Agro');
-    secondResult.then((response) => console.log(response));
-  }
-
   render() {
     return (
-      <Cart />
+      <div>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={pages.Main} />
+            <Route exact path="/cart" component={pages.Cart} />
+          </Switch>
+        </Router>
+      </div>
     );
   }
 }
