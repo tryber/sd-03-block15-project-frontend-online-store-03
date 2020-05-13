@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Categories from '../components/categories';
 import ButtonCart from '../components/buttonCart';
 import BoxEmpty from '../components/buttonCart';
+import SearchBar from '../components/buttonCart';
 
 class Main extends Component {
 
@@ -14,16 +15,20 @@ class Main extends Component {
     return(
       <div className="container">
 
+        <div className="src-bar">
+          <SearchBar />
+        </div>
+
         <div className="categories">
-          <Categories/>
+          <Categories />
         </div>
 
         <div className="carrinho">
-          
+          <ButtonCart />
         </div>
 
         <div className="box-empty">
-          <BoxEmpty/>
+          <BoxEmpty />
         </div>
 
         {

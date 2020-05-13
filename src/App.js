@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import * as pages from './pages/index'
 import './App.css';
+
 
 class App extends React.Component {
   render() {

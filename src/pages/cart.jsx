@@ -9,7 +9,7 @@ class Cart extends Component {
   render(){
 
     return(
-      <h1>Hello wolrd!</h1>
+      <h1></h1>
     )
   }
 }
