@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Categories from '../components/Categories';
-import ButtonCart from '../components/ButtonCart';
-import SearchBar from '../components/SearchBar';
+import * as pages from './Index';
+
 
 class Main extends Component {
   constructor(props) {
@@ -14,15 +13,15 @@ class Main extends Component {
       <div className="container">
 
         <div className="src-bar">
-          <SearchBar />
+          <pages.SearchBar />
         </div>
 
         <div className="categories">
-          <Categories />
+          <pages.Categories />
         </div>
 
         <div className="carrinho">
-          <ButtonCart />
+          <pages.ButtonCart />
         </div>
 
         {
