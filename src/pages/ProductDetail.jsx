@@ -10,36 +10,32 @@ export class ProductDetail extends React.Component {
         <hr />
         <div className="row">
           <div className="col">
-            <Link to="/">
-              <MdKeyboardReturn size="25px" />
-            </Link>
+            <Link to="/"><MdKeyboardReturn size="25px" /></Link>
           </div>
           <div className="produt-cart">
-            <Link to="/cart">
-              <FiShoppingCart size="25px" />
-            </Link>
+            <Link to="/cart"><FiShoppingCart size="25px" /></Link>
           </div>
         </div>
-        <div>
-          <hr />
-        </div>
+        <hr />
         <div className="row">
           <div className="col">
-            <img
-              src="https://image.freepik.com/fotos-gratis/imagem-macro-de-laranja-madura-na-mesa-de-madeira_1150-20092.jpg"
-              alt="imagem detalhada"
-            />
+            <img src="encurtador.com.br/U0456" alt="imagem detalhada" />
           </div>
           <div className="col">
             <ul className="list-group">
-              <li className="list-group-item active" data-testid="product-detail-name">Laranja cortada ao meio 30 reau</li>
-              <li className="list-group-item list-group-item-dark">Especificações técnicas</li>
+              <li
+                className="list-group-item active"
+                data-testid="product-detail-name"
+              >
+                Laranja cortada ao meio 30 reau
+              </li>
+              <li className="list-group-item list-group-item-dark">
+                Especificações técnicas
+              </li>
               <li className="list-group-item">Detalhes</li>
             </ul>
           </div>
-
         </div>
-
       </div>
     );
   }
