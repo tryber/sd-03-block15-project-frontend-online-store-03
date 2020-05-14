@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-import { GoSearch } from 'react-icons/go';
-import * as apifunc from '../services/api';
-import SearchedItens from '../pages/SearchedItens';
+import React, { Component } from "react";
+import { GoSearch } from "react-icons/go";
+import ProductCard from "./ProductCard";
+import * as apifunc from "../services/api";
 
 export class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: '',
+      item: "",
       searchResults: [],
     };
     this.textChange = this.textChange.bind(this);
     this.searchAPI = this.searchAPI.bind(this);
-    this.renderSearchItens = this.renderSearchItens.bind(this);
   }
 
   textChange(value) {
@@ -22,36 +21,46 @@ export class SearchBar extends Component {
   searchAPI(e) {
     e.preventDefault();
     const search = apifunc.getProductsByTerm(this.state.item);
-    search.then((answear) => this.setState(() => ({ searchResults: answear.results })));
+    search.then((answear) =>
+      this.setState(() => ({ searchResults: answear.results }))
+    );
   }
 
-  renderSearchItens() {
-    return <SearchedItens itens={this.state.searchResults} />;
-  }
-
-  /* title, image, price, key */
   render() {
     return (
       <div>
-        <form>
-          <input data-testeid="query-input" type="text" onChange={this.textChange} />
-          <button data-testeid="query-button" type="submit" onClick={this.searchAPI} className="btn btn-outline-primary">
-            <GoSearch />
-          </button>
-        </form>
-        {this.state.item === '' ? (
+        <div className="form-group">
+          <input
+            data-testid="query-input"
+            type="text"
+            onChange={this.textChange}
+            className="form-control"
+            placeholder="Digite sua busca aqui"
+          />
+        </div>
+        <button
+          data-testeid="query-button"
+          type="button"
+          onClick={this.searchAPI}
+          className="btn btn-outline-primary"
+        >
+          <GoSearch />
+        </button>
+
+        {this.state.item === "" && (
           <p data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </p>
-        ) : (
-          <></>
         )}
-        {
-          this.state.searchResults.length > 0
-            ? this.renderSearchItens()
-            : <></>
-        }
-        )
+        <div className="row">
+          {this.state.searchResults.length > 0 && (
+            <div className="col-6">
+              {this.state.searchResults.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     );
   }
