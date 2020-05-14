@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { GoSearch } from 'react-icons/go';
 import ProductCard from './ProductCard';
 import * as apifunc from '../services/api';
+<<<<<<< HEAD
 import * as pages from '../pages/Index';
+=======
+>>>>>>> bdf4b3ea4ee93a5c87fa00149f0db213813cd1fe
 
 export class SearchBar extends Component {
   constructor(props) {
