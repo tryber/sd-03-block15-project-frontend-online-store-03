@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import * as pages from "./Index";
+import React, { Component } from 'react';
+import * as pages from './Index';
 
 class Main extends Component {
   render() {
