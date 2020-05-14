@@ -11,7 +11,7 @@
 .card {
   align-items: stretch;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 
