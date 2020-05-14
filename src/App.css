@@ -10,8 +10,8 @@
 .card {
   align-items: stretch;
   display: flex;
-  flex-direction: row;
   flex-flow: wrap;
+  flex-direction: row;
   justify-content: space-around;
 }
 
