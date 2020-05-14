@@ -1,39 +1,21 @@
 import React, { Component } from 'react';
 import * as pages from './Index';
 
-
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { temProduto: false };
-  }
-
   render() {
     return (
       <div className="container">
-
-        <div className="src-bar">
-          <pages.SearchBar />
+        <div className="row">
+          <div className="col-3">
+            <pages.Categories />
+          </div>
+          <div className="col">
+            <pages.SearchBar />
+          </div>
+          <div className="col-1">
+            <pages.ButtonCart />
+          </div>
         </div>
-
-        <div className="categories">
-          <pages.Categories />
-        </div>
-
-        <div className="carrinho">
-          <pages.ButtonCart />
-        </div>
-
-        {
-          this.state.temProduto === true
-            ? <h1>Aqui vai o card 5</h1>
-            : (
-              <div>
-                <h1>Você não selecionou nenhum produto!</h1>
-              </div>
-            )
-        }
-
       </div>
     );
   }
