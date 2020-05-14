@@ -7,9 +7,7 @@ export class ProductDetail extends React.Component {
   render() {
     return (
       <div className="container">
-        <div>
-          <hr />
-        </div>
+        <hr />
         <div className="row">
           <div className="col">
             <Link to="/">
@@ -22,23 +20,21 @@ export class ProductDetail extends React.Component {
             </Link>
           </div>
         </div>
-
         <div>
           <hr />
         </div>
-
         <div className="row">
           <div className="col">
-            <img src="https://image.freepik.com/fotos-gratis/imagem-macro-de-laranja-madura-na-mesa-de-madeira_1150-20092.jpg" alt="imagem detalhada" />
+            <img
+              src="https://image.freepik.com/fotos-gratis/imagem-macro-de-laranja-madura-na-mesa-de-madeira_1150-20092.jpg"
+              alt="imagem detalhada"
+            />
           </div>
           <div className="col">
             <ul className="list-group">
               <li className="list-group-item active" data-testid="product-detail-name">Laranja cortada ao meio 30 reau</li>
               <li className="list-group-item list-group-item-dark">Especificações técnicas</li>
-              <li className="list-group-item">Dapibus ac facilisis in</li>
-              <li className="list-group-item">Morbi leo risus</li>
-              <li className="list-group-item">Porta ac consectetur ac</li>
-              <li className="list-group-item">Vestibulum at eros</li>
+              <li className="list-group-item">Detalhes</li>
             </ul>
           </div>
 
