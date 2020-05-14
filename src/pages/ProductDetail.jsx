@@ -23,10 +23,7 @@ export class ProductDetail extends React.Component {
           </div>
           <div className="col">
             <ul className="list-group">
-              <li
-                className="list-group-item active"
-                data-testid="product-detail-name"
-              >
+              <li className="list-group-item active" data-testid="product-detail-name">
                 Laranja cortada ao meio 30 reau
               </li>
               <li className="list-group-item list-group-item-dark">
