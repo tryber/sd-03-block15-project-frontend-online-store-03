@@ -11,7 +11,7 @@
   align-items: stretch;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: wrap;
   justify-content: space-around;
 }
 
@@ -19,7 +19,6 @@
   border: solid 1px black;
   height: 350px;
   width: 250px;
-  
 }
 
 .card-img {
