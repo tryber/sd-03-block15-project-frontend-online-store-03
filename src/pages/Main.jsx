@@ -12,9 +12,6 @@ class Main extends Component {
           <div className="col">
             <pages.SearchBar />
           </div>
-          <div className="col-1">
-            <pages.ButtonCart />
-          </div>
         </div>
       </div>
     );

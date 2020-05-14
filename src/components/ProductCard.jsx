@@ -6,13 +6,13 @@ class ProductCard extends Component {
     return (
       <div
         data-testid="product"
-        className="card bg-secondary mb-3"
+        className="products bg-secondary mb-3"
         style={{ maxWidth: `${20}rem` }}
       >
         <div className="card-header">{title}</div>
         <div className="card-body">
           <img className="card-img" src={thumbnail} alt="product_image" />
-          <p className="card-text">{price}</p>
+          <p className="card-text">{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
         </div>
       </div>
     );

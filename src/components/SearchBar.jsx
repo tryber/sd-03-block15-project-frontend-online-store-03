@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { GoSearch } from 'react-icons/go';
 import ProductCard from './ProductCard';
 import * as apifunc from '../services/api';
+import * as pages from '../pages/Index';
 
 export class SearchBar extends Component {
   constructor(props) {
@@ -39,24 +40,28 @@ export class SearchBar extends Component {
   render() {
     return (
       <div>
-        <input
-          data-testid="query-input"
-          type="text"
-          onChange={this.textChange}
-          className="form-control"
-          placeholder="Digite sua busca aqui"
-        />
-        <button
-          data-testid="query-button"
-          type="button"
-          onClick={this.searchAPI}
-          className="btn btn-outline-primary"
-        >
-          <GoSearch />
-        </button>
+        <div className="bar">
+          <input
+            data-testid="query-input"
+            type="text"
+            onChange={this.textChange}
+            className="form-control search-bar"
+            placeholder="Digite sua busca aqui"
+          />
+          <button
+            data-testid="query-button"
+            type="button"
+            onClick={this.searchAPI}
+            className="btn btn-outline-primary"
+          >
+            <GoSearch />
+          </button>
+          <pages.ButtonCart />
+        </div>
+
         {this.renderText()}
         {this.state.searchResults.length > 0 && (
-          <div>
+          <div className="card">
             {this.state.searchResults.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
