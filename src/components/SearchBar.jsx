@@ -21,7 +21,7 @@ export class SearchBar extends Component {
 
   searchAPI(e) {
     e.preventDefault();
-    const search = apifunc.getProductsByTerm(this.state.item);
+    const search = apifunc.getProductsFromCategoryAndQuery('', this.state.item);
     search.then((answear) => this.setState({ searchResults: answear.results }));
   }
 
@@ -47,7 +47,7 @@ export class SearchBar extends Component {
           placeholder="Digite sua busca aqui"
         />
         <button
-          data-testeid="query-button"
+          data-testid="query-button"
           type="button"
           onClick={this.searchAPI}
           className="btn btn-outline-primary"
