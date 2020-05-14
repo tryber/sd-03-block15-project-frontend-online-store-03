@@ -11,7 +11,7 @@
   align-items: stretch;
   display: flex;
   flex-direction: row;
-  flex-flow: wrap;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
