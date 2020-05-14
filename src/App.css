@@ -12,7 +12,7 @@
   align-items: stretch;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   justify-content: space-around;
 }
 
