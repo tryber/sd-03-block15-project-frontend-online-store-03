@@ -9,20 +9,32 @@ export class SearchBar extends Component {
     super(props);
     this.state = {
       item: '',
-      searchResults: [],
+      searchResults: '',
+      selectedCategory: '',
     };
     this.textChange = this.textChange.bind(this);
     this.searchAPI = this.searchAPI.bind(this);
     this.renderText = this.renderText.bind(this);
+    this.changeStateWhenUpdate = this.changeStateWhenUpdate.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.selectedCategoryArr !== this.props.selectedCategoryArr) {
+      this.changeStateWhenUpdate();
+    }
+  }
+
+  changeStateWhenUpdate() {
+    this.setState({ searchResults: this.props.selectedCategoryArr });
   }
 
   textChange(value) {
     this.setState({ item: value.target.value });
   }
 
-  searchAPI(e) {
-    e.preventDefault();
-    const search = apifunc.getProductsFromCategoryAndQuery('', this.state.item);
+  searchAPI() {
+    const selectedCategoryID = this.props.selectedCategoryID;
+    const search = apifunc.getProductsFromCategoryAndQuery(selectedCategoryID, this.state.item);
     search.then((answear) => this.setState({ searchResults: answear.results }));
   }
 

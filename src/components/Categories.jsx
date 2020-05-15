@@ -5,10 +5,7 @@ import RadioCategory from './RadioCategory';
 class Categories extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      categories: [],
-      changed: '',
-    };
+    this.state = { categories: [] };
     this.selectedCategory = this.selectedCategory.bind(this);
   }
 
@@ -18,7 +15,10 @@ class Categories extends React.Component {
   }
 
   selectedCategory(e) {
-    this.value = e.target.value;
+    this.props.handleChangeID(e.target.value);
+    const categoryId = e.target.value;
+    const result = api.getProductsFromCategoryAndQuery(categoryId, '');
+    result.then((response) => this.props.handleChangeArr(response.results));
   }
 
   render() {
