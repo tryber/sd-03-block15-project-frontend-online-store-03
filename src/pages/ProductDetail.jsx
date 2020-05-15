@@ -10,12 +10,8 @@ export class ProductDetail extends React.Component {
       <div className="container">
         <hr />
         <div className="row">
-          <div className="col">
-            <Link to="/"><MdKeyboardReturn size="25px" /></Link>
-          </div>
-          <div className="produt-cart">
-            <Link to="/cart"><FiShoppingCart size="25px" /></Link>
-          </div>
+          <div className="col"><Link to="/"><MdKeyboardReturn size="25px" /></Link></div>
+          <div className="produt-cart"><Link to="/cart"><FiShoppingCart size="25px" /></Link></div>
         </div>
         <hr />
         <div className="row">
@@ -24,15 +20,11 @@ export class ProductDetail extends React.Component {
           </div>
           <div className="col">
             <ul className="list-group">
-              <li className="list-group-item active" data-testid="product-detail-name">
-                {title}
-              </li>
+              <li className="list-group-item active" data-testid="product-detail-name">{title}</li>
               <li className="list-group-item list-group-item-dark">
                 {`Preço: ${price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}
               </li>
-              <li className="list-group-item">
-                {`ID: ${id}`}
-              </li>
+              <li className="list-group-item">{`ID: ${id}`}</li>
             </ul>
           </div>
         </div>
