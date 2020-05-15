@@ -15,17 +15,12 @@ class ProductCard extends Component {
           <img className="card-img" src={thumbnail} alt="product_image" />
           <p className="card-text">{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
           <div className="buttons">
-            <button type="button" className="btn btn-outline-success">
-              Comprar
-            </button>
+            <button type="button" className="btn btn-outline-success">Comprar</button>
             <Link
               type="button"
               className="btn btn-outline-primary"
               data-testid="product-detail-link"
-              to={{
-                pathname: `/details/${id}`,
-                state: { title, thumbnail, price, id },
-              }}
+              to={{ pathname: `/details/${id}`, state: { title, thumbnail, price, id } }}
             >
               Detalhes
             </Link>
