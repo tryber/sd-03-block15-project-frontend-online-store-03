@@ -5,11 +5,7 @@ class ProductCard extends Component {
   render() {
     const { title, thumbnail, price, id } = this.props.product;
     return (
-      <div
-        data-testid="product"
-        className="products bg-secondary mb-3"
-        style={{ maxWidth: `${20}rem` }}
-      >
+      <div data-testid="product" className="products bg-secondary mb-3" style={{ maxWidth: `${20}rem` }}>
         <div className="card-header">{title}</div>
         <div className="card-body">
           <img className="card-img" src={thumbnail} alt="product_image" />
