@@ -11,6 +11,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={pages.Main} />
             <Route exact path="/cart" component={pages.Cart} />
+            <Route exact path="/details/:id?" component={pages.ProductDetail} />
           </Switch>
         </Router>
       </div>
