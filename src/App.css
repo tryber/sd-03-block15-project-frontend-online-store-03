@@ -17,11 +17,26 @@
 
 .products {
   border: solid 1px black;
-  height: 350px;
+  height: 440px;
   width: 250px;
 }
 
 .card-img {
   height: 200px;
   width: 200px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.imagem {
+  height: 350px;
+  width: 350px;
 }
