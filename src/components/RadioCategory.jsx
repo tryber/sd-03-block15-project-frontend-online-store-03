@@ -5,8 +5,8 @@ class RadioCategory extends React.Component {
     const { category, changeEvent } = this.props;
     return (
       <div className="form-check">
-        <div data-testid="category">
-          <label className="form-check-label" htmlFor={category.id}>
+        <div>
+          <label className="form-check-label" htmlFor={category.id} data-testid="category">
             <input
               type="radio"
               className="form-check-input"
