@@ -7,6 +7,7 @@ import * as pages from './Index';
 export class ProductDetail extends React.Component {
   render() {
     const { location: { state: { price, thumbnail, title, id, available_quantity } } } = this.props;
+    const estoque = available_quantity;
     return (
       <div className="container">
         <hr />
@@ -25,7 +26,7 @@ export class ProductDetail extends React.Component {
               <li className="list-group-item list-group-item-dark">
                 {`Preço: ${price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}
               </li>
-              <li className="list-group-item">{`Estoque: ${available_quantity}`}</li>
+              <li className="list-group-item">{`Estoque: ${this.estoque}`}</li>
             </ul>
           </div>
         </div>

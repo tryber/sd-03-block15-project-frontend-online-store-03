@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 class PlusButton extends Component {
-  state = {
-    click: 1,
-    max: this.props.produto.available_quantity,
-    min: 0,
-    arrProduct: [this.props]
-  };
+constructor(props){
+  super(props);
+    state = {
+      click: 1,
+      max: this.props.produto.available_quantity,
+      min: 0,
+      arrProduct: [this.props]
+    };
+  }
 
   add() {
     this.setState({ state: this.state.click++ });

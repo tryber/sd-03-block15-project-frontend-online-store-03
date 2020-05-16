@@ -74,7 +74,12 @@ export class SearchBar extends Component {
         {this.renderText()}
         {this.state.searchResults.length > 0 && (
           <div className="card">
-            {this.state.searchResults.map((product) => (<ProductCard key={product.id} product={product} />))}
+            {this.state.searchResults.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+              />
+            ))}
           </div>
         )}
       </div>

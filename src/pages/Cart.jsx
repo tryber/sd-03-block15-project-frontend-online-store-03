@@ -8,12 +8,8 @@ class Cart extends Component {
     super(props);
     this.state = { produto: [] };
   }
-
-  componentDidMount() {
+  
     this.setState({ produto: this.props.location.state.produto.produto });
-  }
-
-
   render() {
     console.log(this.state.produto.length);
     return (
@@ -24,6 +20,7 @@ class Cart extends Component {
         ) : (
           <pages.PlusButton produto={this.state.produto} />
         )}
+        <BoxEmpty />
       </div>
     );
   }
