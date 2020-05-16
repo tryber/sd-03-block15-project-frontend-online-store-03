@@ -26,10 +26,10 @@ class ButtonCart extends Component {
         <button
           data-testid="shopping-cart-button"
           type="submit"
-          className="btn btn-outline-success"
+          className="btn btn-outline-primary"
           onClick={() => this.trocaState()}
         >
-          <FiShoppingCart size="25" />
+          <FiShoppingCart size="20" />
         </button>
       </form>
     );
