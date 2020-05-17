@@ -6,19 +6,11 @@ class Categories extends React.Component {
   constructor(props) {
     super(props);
     this.state = { categories: [] };
-    this.selectedCategory = this.selectedCategory.bind(this);
   }
 
   componentDidMount() {
     const result = api.getCategories();
     result.then((response) => this.setState({ categories: response }));
-  }
-
-  selectedCategory(e) {
-    this.props.handleChangeID(e.target.value);
-    const categoryId = e.target.value;
-    const result = api.getProductsFromCategoryAndQuery(categoryId, '');
-    result.then((response) => this.props.handleChangeArr(response.results));
   }
 
   render() {
@@ -29,7 +21,7 @@ class Categories extends React.Component {
           <RadioCategory
             key={element.id}
             category={element}
-            changeEvent={this.selectedCategory}
+            changeEvent={this.props.selectedCategory}
           />
         ))}
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { RiDropboxLine } from 'react-icons/ri';
 
-function CaixaVazia() {
+function BoxEmpty() {
   return (
     <div>
       <div className="caixa">
@@ -15,4 +15,4 @@ function CaixaVazia() {
   );
 }
 
-export default CaixaVazia;
+export default BoxEmpty;
