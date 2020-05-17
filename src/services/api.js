@@ -10,3 +10,4 @@ export async function getProductsFromCategoryAndQuery(categoryId, query) {
   return response;
 }
 
+
