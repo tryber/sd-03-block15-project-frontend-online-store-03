@@ -9,5 +9,3 @@ export async function getProductsFromCategoryAndQuery(categoryId, query) {
   const response = await promise.json();
   return response;
 }
-
-
