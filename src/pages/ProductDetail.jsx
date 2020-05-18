@@ -56,14 +56,6 @@ export class ProductDetail extends React.Component {
           <div className="col">
             <ul className="list-group">
               <li className="list-group-item active" data-testid="product-detail-name">
-<<<<<<< HEAD
-                {product.title}
-              </li>
-              <li className="list-group-item list-group-item-dark">
-                {`Preço: ${product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}
-              </li>
-              <li className="list-group-item">{`ID: ${product.id}`}</li>
-=======
                 {product.title}</li>
               <li className="list-group-item list-group-item-dark">
                 {`Preço: ${product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}
@@ -73,7 +65,6 @@ export class ProductDetail extends React.Component {
                 <BuyButton product={product} test={'product-detail-add-to-cart'} selectedQtd={quantity} />
                 <HandleQtd alterQuantity={this.alterQuantity} quantity={quantity} />
               </li>
->>>>>>> 32a056dad781de50939ec9ae68757752c26fb1bd
             </ul>
           </div>
         </div>
