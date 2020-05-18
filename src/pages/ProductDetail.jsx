@@ -62,7 +62,11 @@ export class ProductDetail extends React.Component {
               </li>
               <li className="list-group-item">{`ID: ${product.id}`}</li>
               <li className="list-group-item">
-                <BuyButton product={product} test="product-detail-add-to-cart" selectedQtd={quantity} />
+                <BuyButton
+                  product={product}
+                  test="product-detail-add-to-cart"
+                  selectedQtd={quantity}
+                />
                 <HandleQtd alterQuantity={this.alterQuantity} quantity={quantity} />
               </li>
             </ul>
