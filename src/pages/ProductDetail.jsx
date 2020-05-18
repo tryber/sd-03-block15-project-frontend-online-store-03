@@ -38,34 +38,50 @@ export class ProductDetail extends React.Component {
     }
   }
 
+  details() {
+    return (
+      <div className="col">
+        <ul className="list-group">
+          <li
+            className="list-group-item active"
+            data-testid="product-detail-name"
+          >
+            {this.state.product.title}
+          </li>
+          <li className="list-group-item list-group-item-dark">
+            {`Preço: ${this.state.product.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}
+          </li>
+          <li className="list-group-item">{`ID: ${this.state.product.id}`}</li>
+          <li className="list-group-item">
+            <BuyButton
+              product={this.state.product}
+              test="product-detail-add-to-cart"
+              selectedQtd={this.state.product.quantity}
+            />
+            <HandleQtd alterQuantity={this.alterQuantity} quantity={this.state.product.quantity} />
+          </li>
+        </ul>
+      </div>
+    );
+  }
+
 
   render() {
     const { location: { state: { product } } } = this.props;
-    const { quantity } = this.state;
     return (
       <div className="container">
         <hr />
         {this.configureLinks}
         <hr />
         <div className="row">
-          <div className="col"><img src={product.thumbnail} alt={product.title} className="imagem" /></div>
           <div className="col">
-            <ul className="list-group">
-              <li className="list-group-item active" data-testid="product-detail-name">{product.title}</li>
-              <li className="list-group-item list-group-item-dark">
-                {`Preço: ${product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}
-              </li>
-              <li className="list-group-item">{`ID: ${product.id}`}</li>
-              <li className="list-group-item">
-                <BuyButton
-                  product={product}
-                  test="product-detail-add-to-cart"
-                  selectedQtd={quantity}
-                />
-                <HandleQtd alterQuantity={this.alterQuantity} quantity={quantity} />
-              </li>
-            </ul>
+            <img
+              src={product.thumbnail}
+              alt={product.title}
+              className="imagem"
+            />
           </div>
+          {this.details()}
         </div>
         <Coments />
       </div>
