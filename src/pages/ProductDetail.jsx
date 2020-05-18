@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdKeyboardReturn } from 'react-icons/md';
 import { FiShoppingCart } from 'react-icons/fi';
-import BuyButton from '../components/BuyButton';
-import HandleQtd from '../components/HandleQtd';
 import Coments from '../components/Coments';
+import DetailsProduct from '../components/DetailsProduct';
 
 export class ProductDetail extends React.Component {
   static configureLinks() {
@@ -38,36 +37,9 @@ export class ProductDetail extends React.Component {
     }
   }
 
-  details() {
-    return (
-      <div className="col">
-        <ul className="list-group">
-          <li
-            className="list-group-item active"
-            data-testid="product-detail-name"
-          >
-            {this.state.product.title}
-          </li>
-          <li className="list-group-item list-group-item-dark">
-            {`Preço: ${this.state.product.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}
-          </li>
-          <li className="list-group-item">{`ID: ${this.state.product.id}`}</li>
-          <li className="list-group-item">
-            <BuyButton
-              product={this.state.product}
-              test="product-detail-add-to-cart"
-              selectedQtd={this.state.product.quantity}
-            />
-            <HandleQtd alterQuantity={this.alterQuantity} quantity={this.state.product.quantity} />
-          </li>
-        </ul>
-      </div>
-    );
-  }
-
-
   render() {
     const { location: { state: { product } } } = this.props;
+    const { quantity } = this.state;
     return (
       <div className="container">
         <hr />
@@ -81,7 +53,7 @@ export class ProductDetail extends React.Component {
               className="imagem"
             />
           </div>
-          {this.details()}
+          <DetailsProduct product={product} quantity={quantity} />
         </div>
         <Coments />
       </div>
