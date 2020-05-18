@@ -2,19 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdKeyboardReturn } from 'react-icons/md';
 import { FiShoppingCart } from 'react-icons/fi';
-import BuyButton from '../components/BuyButton';
-import HandleQtd from '../components/HandleQtd';
+import Coments from '../components/Coments';
+import DetailsProduct from '../components/DetailsProduct';
 
 export class ProductDetail extends React.Component {
-
   static configureLinks() {
     return (
       <div className="row">
         <div className="col">
           <Link to="/"><MdKeyboardReturn size="25px" /></Link>
         </div>
-        <div className="produt-cart"><Link to="/cart" data-testid="shopping-cart-button">
-          <FiShoppingCart size="25px" /></Link>
+        <div className="produt-cart">
+          <Link to="/cart" data-testid="shopping-cart-button">
+            <FiShoppingCart size="25px" />
+          </Link>
         </div>
       </div>
     );
@@ -36,7 +37,6 @@ export class ProductDetail extends React.Component {
     }
   }
 
-
   render() {
     const { location: { state: { product } } } = this.props;
     const { quantity } = this.state;
@@ -47,23 +47,15 @@ export class ProductDetail extends React.Component {
         <hr />
         <div className="row">
           <div className="col">
-            <img src={product.thumbnail} alt={product.title} className="imagem" />
+            <img
+              src={product.thumbnail}
+              alt={product.title}
+              className="imagem"
+            />
           </div>
-          <div className="col">
-            <ul className="list-group">
-              <li className="list-group-item active" data-testid="product-detail-name">
-                {product.title}</li>
-              <li className="list-group-item list-group-item-dark">
-                {`Preço: ${product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}
-              </li>
-              <li className="list-group-item">{`ID: ${product.id}`}</li>
-              <li className="list-group-item">
-                <BuyButton product={product} test={'product-detail-add-to-cart'} selectedQtd={quantity} />
-                <HandleQtd alterQuantity={this.alterQuantity} quantity={quantity} />
-              </li>
-            </ul>
-          </div>
+          <DetailsProduct product={product} quantity={quantity} />
         </div>
+        <Coments />
       </div>
     );
   }

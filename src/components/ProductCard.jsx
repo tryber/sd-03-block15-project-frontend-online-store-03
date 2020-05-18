@@ -12,7 +12,7 @@ class ProductCard extends Component {
           <img className="card-img" src={product.thumbnail} alt="product_image" />
           <p className="card-text">{product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
           <div className="buttons">
-            <BuyButton product={product} test={'product-add-to-cart'} />
+            <BuyButton product={product} test="product-add-to-cart" />
             <Link
               type="button"
               className="btn btn-outline-primary"
