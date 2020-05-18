@@ -23,7 +23,6 @@ export class ProductDetail extends React.Component {
             <ul className="list-group">
               <li className="list-group-item active" data-testid="product-detail-name">
                 {product.title}
-
               </li>
               <li className="list-group-item list-group-item-dark">
                 {`Preço: ${product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}
