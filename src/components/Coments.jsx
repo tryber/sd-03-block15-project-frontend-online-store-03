@@ -19,7 +19,6 @@ export class Coments extends React.Component {
             className="form-text text-muted"
           >
             Esse email é usado apenas para verificarmos o usuário.
-
           </small>
         </div>
         <Stars />
