@@ -6,4 +6,3 @@ export { default as Categories } from '../components/Categories';
 export { default as ButtonCart } from '../components/ButtonCart';
 export { default as SearchBar } from '../components/SearchBar';
 export { default as ReturnAndCart } from '../components/ProductCard';
-export { default as PlusButton } from '../components/PlusButton';

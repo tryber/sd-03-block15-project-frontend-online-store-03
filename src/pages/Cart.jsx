@@ -1,26 +1,41 @@
 import React, { Component } from 'react';
 import BoxEmpty from '../components/BoxEmpty';
 import HeaderCart from '../components/HeaderCart';
-import * as pages from './Index';
+import CartProducts from '../components/CartProducts';
 
 class Cart extends Component {
   constructor(props) {
     super(props);
-    this.state = { produto: [] };
+    this.state = { products: [] };
+    this.configureCart = this.configureCart.bind(this);
   }
-  
-    this.setState({ produto: this.props.location.state.produto.produto });
+
+  componentDidMount() {
+    if (localStorage.getItem('item')) {
+      return this.configureCart();
+    }
+
+    return null;
+  }
+
+  configureCart() {
+    const cartList = JSON.parse(localStorage.getItem('item'));
+    this.setState({ products: cartList });
+  }
+
   render() {
-    console.log(this.state.produto.length);
     return (
       <div className="container">
         <HeaderCart />
-        {this.state.produto.length >= 0 ? (
-          <h1>Aqui tem que ter o carrinho!</h1>
+        {(this.state.products.length > 0) ? (
+          <div>
+            {this.state.products.map((cartItem) => (
+              <CartProducts key={cartItem.id} item={cartItem} />
+            ))}
+          </div>
         ) : (
-          <pages.PlusButton produto={this.state.produto} />
+          <BoxEmpty />
         )}
-        <BoxEmpty />
       </div>
     );
   }
