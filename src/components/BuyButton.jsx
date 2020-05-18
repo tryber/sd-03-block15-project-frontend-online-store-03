@@ -9,8 +9,12 @@ class BuyButton extends Component {
   addToCart() {
     const { product } = this.props;
     const item = JSON.parse(localStorage.getItem('item'));
+    const qtd = this.props.selectedQtd;
+    product.quantity = qtd;
+
+    if (!qtd || null) { product.quantity = 1; }
+
     if (!item || null) {
-      product.quantity = 1;
       return localStorage.setItem('item', JSON.stringify([{ ...product }]));
     }
 
@@ -20,7 +24,6 @@ class BuyButton extends Component {
       return localStorage.setItem('item', JSON.stringify([...item]));
     }
 
-    product.quantity = 1;
     item.push({ ...product });
     return localStorage.setItem('item', JSON.stringify([...item]));
   }
@@ -28,7 +31,7 @@ class BuyButton extends Component {
   render() {
     return (
       <button
-        data-testid="product-add-to-cart"
+        data-testid={this.props.test}
         type="button"
         className="btn btn-outline-primary"
         onClick={this.addToCart}
