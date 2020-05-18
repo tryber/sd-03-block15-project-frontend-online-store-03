@@ -14,10 +14,7 @@ export class Coments extends React.Component {
             aria-describedby="emailHelp"
             placeholder="exemple@email.com"
           />
-          <small
-            id="emailHelp"
-            className="form-text text-muted"
-          >
+          <small className="form-text text-muted">
             Esse email é usado apenas para verificarmos o usuário.
           </small>
         </div>
