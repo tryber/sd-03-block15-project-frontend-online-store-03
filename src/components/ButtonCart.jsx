@@ -24,7 +24,7 @@ class ButtonCart extends Component {
     return (
       <form>
         <button
-          data-testid="shopping-cart-button"
+          data-testid={this.props.button}
           type="submit"
           className="btn btn-outline-success"
           onClick={() => this.trocaState()}
