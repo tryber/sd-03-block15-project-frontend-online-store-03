@@ -57,6 +57,7 @@ export class ProductDetail extends React.Component {
               alt={product.title}
               className="imagem"
             />
+
           </div>
           <DetailsProduct product={product} quantity={quantity} />
         </div>
