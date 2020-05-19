@@ -22,7 +22,7 @@ export class SearchBar extends Component {
           >
             <GoSearch />
           </button>
-          <pages.ButtonCart />
+          <pages.ButtonCart button="shopping-cart-button" />
         </div>
       </div>
     );

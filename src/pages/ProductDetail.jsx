@@ -1,25 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdKeyboardReturn } from 'react-icons/md';
-import { FiShoppingCart } from 'react-icons/fi';
+import ButtonCart from '../components/ButtonCart';
 import Coments from '../components/Coments';
 import DetailsProduct from '../components/DetailsProduct';
 
 export class ProductDetail extends React.Component {
-  static configureLinks() {
-    return (
-      <div className="row">
-        <div className="col">
-          <Link to="/"><MdKeyboardReturn size="25px" /></Link>
-        </div>
-        <div className="produt-cart">
-          <Link to="/cart" data-testid="shopping-cart-button">
-            <FiShoppingCart size="25px" />
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  // static configureLinks() {
+  //   return (
+  //     <div className="row">
+  //       <div className="col">
+  //         <Link to="/"><MdKeyboardReturn size="25px" /></Link>
+  //       </div>
+  //       <div className="produt-cart">
+  //         <ButtonCart button={"shopping-cart-button"} />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   constructor(props) {
     super(props);
@@ -43,7 +41,14 @@ export class ProductDetail extends React.Component {
     return (
       <div className="container">
         <hr />
-        {this.configureLinks}
+        <div className="row">
+          <div className="col">
+            <Link to="/"><MdKeyboardReturn size="25px" /></Link>
+          </div>
+          <div className="produt-cart">
+            <ButtonCart button="shopping-cart-button" />
+          </div>
+        </div>
         <hr />
         <div className="row">
           <div className="col">
